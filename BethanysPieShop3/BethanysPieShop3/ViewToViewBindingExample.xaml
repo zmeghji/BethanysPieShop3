@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BethanysPieShop3.ViewToViewBindingExample">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label
+        Grid.Row="0"
+        Grid.Column="0">
+            Name
+        </Label>
+        <Entry
+            Grid.Row="0"
+            Grid.Column="1"
+            x:Name="Name"
+            Text="{Binding Name}"
+            >
+        </Entry>
+        <Label
+        Grid.Row="1"
+        Grid.Column="0">
+            Price
+        </Label>
+        <Entry
+            Grid.Row="1"
+            Grid.Column="1"
+            x:Name="Price"
+            Text="{Binding Price}">
+        </Entry>
+        <Label
+        Grid.Row="2"
+        Grid.Column="0">
+            Number Sold
+        </Label>
+        <Label
+            Grid.Row="2"
+            Grid.Column="1"
+            BindingContext="{x:Reference Name=NumberSoldSlider}"
+            Text="{Binding Value}"
+            >
+        </Label>
+        <Slider
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Minimum="0"
+            Maximum="100"
+            x:Name="NumberSoldSlider"
+            ></Slider>
+        <Button
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Text="Add Pie"></Button>
+    </Grid>
+
+
+</ContentPage>
